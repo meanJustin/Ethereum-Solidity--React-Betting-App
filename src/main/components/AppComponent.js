@@ -14,7 +14,7 @@ class App extends Component {
     const isChrome = !!window.chrome && !!window.chrome.webstore;
     const hasMetamask = !USE_INJECTED_WEB3 || (USE_INJECTED_WEB3 && !!this.props.web3);
     const onProperNetwork = !USE_INJECTED_WEB3 || (this.props.networkName === undefined) || (this.props.networkName && this.props.networkName === TARGET_LIVE_NETWORK);
-    if(!isChrome || !hasMetamask || !onProperNetwork) {
+    if(!hasMetamask || !onProperNetwork) {
       return <IncompatibleComponent isChrome={isChrome} hasMetamask={hasMetamask} onProperNetwork={onProperNetwork}/>;
     }
 
